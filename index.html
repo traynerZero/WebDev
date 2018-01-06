@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Paintstagram</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<!-- stylesheet -->
+	<!-- dependency: React.js -->
+    <script src="js/react-with-addons.js"></script>
+    <script src="js/react-dom.js"></script>
+
+
+    <!--scripts-->
+    <link href="css/literallycanvas.css" rel="stylesheet">
+    <script src="js/literallycanvas.js"></script>
+    <script src="js/jquery.js"></script>
+</head>
+
+<div class="header"><h1>Paintstagram</h1></div>
+
+<div align="center">
+<body class="body" align="center">
+	<div class="container post"><button type="button" class="container post"><STRONG>POST</STRONG></button>
+        <div id="insertnew" style="display: none;">
+
+                                    <div class="literCanvas"></div>
+                                    <div id="thisCanvas" style="display: none">
+                                    <canvas id="canvas" height="300" width="400" style="border:solid; background-color: gray"></canvas>
+                                    </div>
+                                    <input type="hidden" name="cust_img_data" id="cust_img_data" value=""/>
+                <br>
+                <textarea id="desc"></textarea>
+                <br>
+    <button type="submit" id="saveDesign" style="padding: 10px;">Save</button>
+    <button type="submit" id="newDesign" style="padding: 10px;">Discard</button>
+    </div>
+	</div>
+    <div class="contain" id="displayhere">
+                                
+                                    <!-- <img name="cust_image" src='' style="display: none;" height="550" width="700" id="savedImage"> !-->
+    </div>
+	<script>
+                                          //
+                                        var lc;
+                                      $(document).ready(function(){
+                                        var canvas = document.getElementById('canvas');
+                                        var ctx = canvas.getContext('2d');
+                                        lc = LC.init(
+                                                document.getElementsByClassName('literCanvas')[0],
+                                                {
+                                                  imageURLPrefix: 'img',
+                                                  imageSize: {width: 400, height: 300},
+                                                 tools: [LC.tools.Line,LC.tools.Eraser,
+                                                    LC.tools.Rectangle, LC.tools.Ellipse, LC.tools.Eyedropper, LC.tools.Polygon, LC.tools.Pan,LC.tools.Text,LC.tools.Pencil],
+                                                    toolbarPosition : 'top'
+                                                }
+                                            );
+                                        $('#saveDesign').on('click',function(){
+                                            var d =lc.getImage().toDataURL();
+                                            var desc = $('#desc').val();
+                                            $('#cust_img_data').val(d);
+                                            $('#newDesign').show();
+                                            $('#displayhere').append('<textarea class="border-none" readonly="true">'+desc+'</textarea><div class="content"><img name="cust_image" src="'+d+'" height="300" width="200" id="savedImage"></div>');
+                                            $('#displayhere').show('blind');
+                                            lc.clear();
+                                            
+                                        });
+                                        $('#newDesign').on('click', function(){
+                                            $('.literCanvas').show();
+                                            $('#saveDesign').show();
+                                            lc.clear();
+                                        });
+
+                                        $('.post').on('click',function(){
+                                                $('#insertnew').show('blind');
+                                        });
+
+                                      });
+    </script>
+</body>
+</div>
+
+</html>
