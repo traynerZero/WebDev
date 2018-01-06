@@ -13,37 +13,76 @@
     <link href="css/literallycanvas.css" rel="stylesheet">
     <script src="js/literallycanvas.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
 </head>
 
 
-<ul>
-  <h1 style="color: white; font-family:cursive; ">Paintstagram</h1>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-</ul>
 
-<div align="center">
-<body class="body" align="center">
-	<div class="container post"><button type="button" class="container post"><STRONG>POST</STRONG></button>
-        <div id="insertnew" style="display: none;">
 
+<body>
+  <h2 style="font-family:cursive; font-size: 24px;" align="center">Paintstagram</h2>
+  <div class="navbar">
+    <div class="dropdown">
+    <button class="dropbtn">= 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" style="right: 0; left: auto;">
+      <a href="#">Account Settings</a>
+      <a href="#">Profile</a>
+      <a href="#">Logout</a>
+    </div>
+  </div>
+  <a href="#home">Home</a>
+</div>
+<div class="row">
+	<div class="column left card" style="height: auto; width: 37%;" align="right">
                                     <div class="literCanvas"></div>
                                     <div id="thisCanvas" style="display: none">
-                                    <canvas id="canvas" height="300" width="400" style="border:solid; background-color: gray"></canvas>
+                                    <canvas id="canvas" ></canvas>
                                     </div>
                                     <input type="hidden" name="cust_img_data" id="cust_img_data" value=""/>
                 <br>
-                <textarea id="desc"></textarea>
+                <textarea class="theme" id="desc" style="width: 400px;"></textarea>
                 <br>
-    <button type="submit" id="saveDesign" style="padding: 10px;">Save</button>
-    <button type="submit" id="newDesign" style="padding: 10px;">Discard</button>
+    <button type="button" id="saveDesign" style="padding: 10px;">POST</button>
+    <br>
+    <br>
+    <div class="row card theme-noborder">
+    <h3 style="color: gray">FIND FRIENDS</h3>
+    <div class="column clear theme-noborder" align="left" style="width: 50%;">
+        <a href="#"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><h4>Sample Person</h4></a>
+        <button type="button" class="theme-noborder">Add Friend +</button>
+    </div>
+    <div class="column clear theme-noborder" align="left" style="width: 50%;">
+        <a href="#"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><h4>Sample Person</h4></a>
+        <button type="button" class="theme-noborder">Add Friend +</button>
+    </div>
     </div>
 	</div>
-    <div class="contain" id="displayhere">
+    <div class="contain theme-noborder column right" id="displayhere">
+        <div class="card">
+        <a href=""><h4>Sample Person</h4></a>
+        <h5 style="padding: 10px; text-overflow: ellipsis;" min="10">SAMPLEAFKDSHFKJSAHKFHSD DSJKFHKSDAFHK LSAHFKJASH FKDSAHFKJHSADKJFHASDJFHASDJKFHSADKHF HFJKAH FJKDSHFKJADSH KFHSADJHDHSKFJAfkahf kjahfkjsdahfsdahfksja</h5>
+        <div class="content"><img class="img" name="cust_image" src="/moreimg/no_image.jpg" id="savedImage"></div>
+        </div>
+        <div class="card">
+        <a href=""><h4>Sample Person</h4></a>
+        <h5 style="padding: 10px; text-overflow: ellipsis;" min="10">SAMPLEAFKDSHFKJSAHKFHSD DSJKFHKSDAFHK LSAHFKJASH FKDSAHFKJHSADKJFHASDJFHASDJKFHSADKHF HFJKAH FJKDSHFKJADSH KFHSADJHDHSKFJAfkahf kjahfkjsdahfsdahfksja</h5>
+        <div class="content"><img class="img" name="cust_image" src="/moreimg/no_image.jpg" id="savedImage"></div>
+        </div>
+        <div class="card">
+        <a href=""><h4>Sample Person</h4></a>
+        <h5 style="padding: 10px; text-overflow: ellipsis;" min="10">SAMPLEAFKDSHFKJSAHKFHSD DSJKFHKSDAFHK LSAHFKJASH FKDSAHFKJHSADKJFHASDJFHASDJKFHSADKHF HFJKAH FJKDSHFKJADSH KFHSADJHDHSKFJAfkahf kjahfkjsdahfsdahfksja</h5>
+        <div class="content"><img class="img" name="cust_image" src="/moreimg/no_image.jpg" id="savedImage"></div>
+        </div>
+        <div class="card">
+        <a href=""><h4>Sample Person</h4></a>
+        <h5 style="padding: 10px; text-overflow: ellipsis;" min="10">SAMPLEAFKDSHFKJSAHKFHSD DSJKFHKSDAFHK LSAHFKJASH FKDSAHFKJHSADKJFHASDJFHASDJKFHSADKHF HFJKAH FJKDSHFKJADSH KFHSADJHDHSKFJAfkahf kjahfkjsdahfsdahfksja</h5>
+        <div class="content"><img class="img" name="cust_image" src="/moreimg/no_image.jpg" id="savedImage"></div>
+        </div>
                                 
                                     <!-- <img name="cust_image" src='' style="display: none;" height="550" width="700" id="savedImage"> !-->
+    </div>
     </div>
 	<script>
                                           //
@@ -66,24 +105,21 @@
                                             var desc = $('#desc').val();
                                             $('#cust_img_data').val(d);
                                             $('#newDesign').show();
-                                            $('#displayhere').append('<textarea class="border-none" readonly="true">'+desc+'</textarea><div class="content"><img name="cust_image" src="'+d+'" height="300" width="200" id="savedImage"></div>');
-                                            $('#displayhere').show('blind');
+                                            $('#displayhere').prepend('<div class="card" id="newsfeed"><a href=""><h4>Sample Person</h4></a><h5 style="padding: 10px; text-overflow: ellipsis;" min="10">'+desc+'</h5><div class="content"><img class="img" name="cust_image" src="'+d+'" id="savedImage"></div></div>');
+                                            $('#newsfeed').hide();
+                                            $('#newsfeed').show('blind');
+                                            $('#desc').val('');
                                             lc.clear();
                                             
-                                        });
-                                        $('#newDesign').on('click', function(){
-                                            $('.literCanvas').show();
-                                            $('#saveDesign').show();
-                                            lc.clear();
-                                        });
-
-                                        $('.post').on('click',function(){
-                                                $('#insertnew').show('blind');
                                         });
 
                                       });
     </script>
+    <style type="text/css">
+        .literally {
+  width: 500px;
+}
+    </style>
 </body>
-</div>
 
 </html>
