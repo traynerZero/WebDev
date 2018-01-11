@@ -1,0 +1,52 @@
+.about-content{
+	text-align: center;
+}
+
+.about-ct{
+
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transform-origin: 50% 50% 0px;
+    text-align: center; 
+    margin: auto; 
+    bottom: 0; 
+    top: 0;
+}
+
+.parallax-wall{ 
+    /* The image used */
+    background-image: url("/moreimg/about-wall.png");
+
+    /* Set a specific height */
+    height: 90%; 
+
+    padding: 10px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax-wall-next{ 
+    /* The image used */
+    background-image: url("/moreimg/about-wall.png");
+
+
+    /* Set a specific height */
+    height: 65%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.about-container {
+    background-color: white;
+    height: 300px;
+    padding: 16px;
+}
+
+.about-container span {
+    font-size: 20px;
+}
