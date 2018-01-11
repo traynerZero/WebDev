@@ -71,10 +71,12 @@ li a:hover {
 
 a:link {
     text-decoration: none;
+    color: gray;
 }
 
 a:visited {
     text-decoration: none;
+    color: gray;
 }
 
 a:hover {
@@ -92,6 +94,9 @@ a:active {
 
 .font-md{
 	font-size: 14px;
+}
+.font{
+  font-family: cursive;
 }
 
 .black{
@@ -138,6 +143,7 @@ a:active {
 	width: 200px;
 	max-width: 100%;
     height: 100px;
+    transition: width 2s, height 4s;
 }
 
 .img-tr{
@@ -147,8 +153,9 @@ a:active {
 }
 
 .img:hover{
-	opacity: 1;
-	transform: scale(4);
+
+    width: 600px;
+    height: 300px;
 }
 
 .border-none{
@@ -176,6 +183,8 @@ a:active {
 	grid-template-columns: auto;
 	grid-gap: 10px;
 }
+
+
 
 .theme-noborder{
 	background-color: white;
