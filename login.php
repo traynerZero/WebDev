@@ -8,11 +8,9 @@
 
 
     <!--scripts-->
-    <link href="css/literallycanvas.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/modals.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/literallycanvas.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/scripts.js"></script>
@@ -21,11 +19,19 @@
  <?php
     include('header.php');
  ?>
-<div class="login">
-    <input type="text" placeholder="Username" id="username">  
-  <input type="password" placeholder="password" id="password">  
-  <input type="submit" value="Sign In">
-</div>
+<form action="index.html" method="post">
+      
+        <h1>Login</h1>
+        
+        <fieldset>          
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="user_email">
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="user_password">
+          
+        <button type="submit">Sign Up</button>
+      </form>
 
 
 
