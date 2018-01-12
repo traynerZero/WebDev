@@ -19,7 +19,7 @@
   </div>
   <a href="#" title="Message"><span class=" fa fa-envelope"></span></a>
   <a href="#" title="Notification"><span class="fa fa-bell"></span></a>
-  <a href="index.php" title="Home"><span class="fa fa-home"></span></a>
+  <a href="home.php" title="Home"><span class="fa fa-home"></span></a>
   <a href="#"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 25px; width: 25px;"></a>
 </div>
 

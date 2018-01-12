@@ -14,11 +14,10 @@
     <script src="js/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
 </head>
+<h2 style="font-family:cursive; font-size: 32px;" align="center"><a href="index.php" style="color: black;">Paintstagram</a></h2>
 <body>
- <?php
-    include('header.php');
- ?>
-  <form action="index.html" method="post">
+
+  <form action="home.php" method="post">
       
         <h1>Sign Up</h1>
         
@@ -31,6 +30,8 @@
           <input type="email" id="mail" name="user_email">
           
           <label for="password">Password:</label>
+          <input type="password" id="password" name="user_password">
+          <label for="password">Confirm Password:</label>
           <input type="password" id="password" name="user_password">
           
           <label>Age:</label>
