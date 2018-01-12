@@ -1,10 +1,12 @@
 *{
 	overflow: visible;
 }
-
+.app-header{
+    z-index: 100;
+}
 
 body {
-	background-color: white;
+	background: #fff url('https://subtlepatterns.com/patterns/gplaypattern.png') repeat;
 	width: 100%; 
 	margin: 0 auto; 
 }
