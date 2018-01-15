@@ -7,16 +7,26 @@
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
-    color: #384047;
+    font-family: cursive;
+    color: white;
 }
 
-form {
-    margin: 10px auto;
-    margin-top: 50px;
+.form-login {
+    max-width: 30%;
     padding: 10px 20px;
-    background: #f4f7f8;
+    background: black;
+    border-top-right-radius:10px; 
+    border-bottom-right-radius:10px;
+}
+.form-register {
+    display: none;
+    margin-left: 40%;
+    padding: 10px 20px;
+    width: 60%;
+    background: black;
     border-radius: 8px;
+    border-top-left-radius:10px; 
+    border-bottom-left-radius:10px;
 }
 
 h1 {
@@ -44,6 +54,7 @@ select {
     padding: 15px;
     width: 100%;
     background-color: #e8eeef;
+    border-radius: 10px;
     color: #8a97a0;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
     margin-bottom: 30px;
@@ -81,8 +92,8 @@ label.light {
 }
 
 .number {
-    background-color: #5fcf80;
-    color: #fff;
+    background-color: white;
+    color: black;
     height: 30px;
     width: 30px;
     display: inline-block;
@@ -92,10 +103,4 @@ label.light {
     text-align: center;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
     border-radius: 100%;
-}
-
-@media screen and (min-width: 35rem) {
-    form {
-        max-width: 50rem;
-    }
 }

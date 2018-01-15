@@ -28,10 +28,10 @@
           <input type="text" id="name" name="user_name">
           
           <label for="mail">Email:</label>
-          <input type="email" id="mail" name="user_email">
+          <input type="email" id="mail" name="user_email" autocomplete="false" value=" ">
           
           <label for="password">Password:</label>
-          <input type="password" id="password" name="user_password">
+          <input type="password" id="password" name="user_password" autocomplete="false" value=" ">
           
           <label>Age:</label>
           <input type="radio" id="under_13" value="under_13" name="user_age"><label for="under_13" class="light">Under 13</label>&emsp;
@@ -48,7 +48,7 @@
           <textarea id="bio" name="user_bio"></textarea>
         </fieldset>
         <fieldset>
-        <button type="submit">Save changes</button>
+        <button type="submit" class="theme-noborder">Save changes</button>
       </form>
 
 

@@ -1,6 +1,5 @@
 
 hr {
-    border: solid;
     border-width: 1px;
     border-color: #0B86C3;
 }
@@ -8,6 +7,7 @@ hr {
 .info_icon {
     color: #0B86C3;
     font-size: 18px;
+    font-family: cursive;
     padding: 3px;
 }
 
@@ -17,7 +17,8 @@ hr {
     height: 100px;
     margin: auto;
     padding: 10px;
-    background: #222 url('https://subtlepatterns.com/patterns/use_your_illusion.png') repeat;
+    border-radius: 20px;
+    background: #222 url('/moreimg/use_your_illusion.png') repeat;
     padding: 10px;
 }
 
@@ -40,7 +41,7 @@ hr {
 }
 
 .user_name {
-    font-family: 'Open Sans', sans-serif;
+    font-family: cursive;
     font-weight: 400;
     margin: 0;
     color: #fff;
@@ -71,7 +72,7 @@ hr {
 }
 
 #scorebox {
-    background: #222 url('https://subtlepatterns.com/patterns/use_your_illusion.png') repeat;
+    background: #222 url('/moreimg/use_your_illusion.png') repeat;
     width: 200px;
     height: 65px;
     padding: 8px;

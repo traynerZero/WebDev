@@ -1,0 +1,333 @@
+*{
+	overflow: visible;
+}
+.app-header{
+    z-index: 100;
+}
+
+body {
+	background: #fff url('https://subtlepatterns.com/patterns/gplaypattern.png') repeat;
+	width: 100%; 
+	margin: 0 auto; 
+}
+textarea{
+	font-size: 12px;
+	padding: 10px;
+	height: auto;
+	width: 100%;
+}
+
+.cursor{
+  
+  cursor:pointer;
+}
+
+button{
+	cursor:pointer;
+	font-family: cursive;
+	background-color: white;
+	border-color:gray;
+	border-radius: 10px;
+	border-style: solid;
+	padding: 10px;
+}
+
+button:hover{
+	cursor:pointer;
+	color: white;
+	font-family: cursive;
+	background-color: gray;
+	border-color:white;
+}
+
+h4{
+	color: black;
+}
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: right;
+}
+
+li a {
+	position: relative;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: cursive;
+    font-size: 15px;
+}
+
+li a:hover {
+    background-color: #111;
+    border-radius: 10px;
+}
+
+a:link {
+    text-decoration: none;
+    color: gray;
+}
+
+a:visited {
+    text-decoration: none;
+    color: gray;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: gray;
+}
+
+a:active {
+    text-decoration: underline;
+    color: gray;
+}
+.font-sm{
+	font-size: 12px;
+}
+
+.font-md{
+	font-size: 14px;
+}
+.font{
+  font-family: cursive;
+  color: gray;
+}
+
+.black{
+	color: black;
+}
+
+.wrapper{   
+  white-space: pre-line;
+}
+
+
+.button{
+	cursor:pointer;
+}
+
+.relative{
+	position: relative;
+}
+
+.topcorner{
+	padding: 5px;
+   position:absolute;
+   top:0px;
+   right:0px;
+  }
+
+.panel{
+	max-width: 100%;
+    margin-left: 100px;
+     margin-right: 100px;
+
+}
+
+.round-border{
+	border-radius: 10px;
+}
+
+.profile-img{
+	border-radius: 50%;
+}
+
+
+.img{
+	width: 200px;
+	max-width: 100%;
+    height: 100px;
+    transition: width 2s, height 4s;
+}
+
+.img-tr{
+	width: 150px;
+	max-width: 100%;
+    height: 70px;
+}
+
+.img:hover{
+
+    width: 600px;
+    height: 300px;
+}
+
+.border-none{
+	border:none;
+}
+
+.header{
+	font-family: cursive;
+	background-color: gray;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	height: 100px;
+	width: auto;
+}
+
+
+.post{
+	font-family: cursive; 
+	font-size: 24px; 
+	color: gray;
+}
+
+.body{
+	display: block;
+	grid-template-columns: auto;
+	grid-gap: 10px;
+}
+
+
+
+.theme-noborder{
+	background-color: white;
+	padding: 5px;
+	font-family: cursive;
+}
+.clear {
+	clear: both;
+}
+
+.theme{
+	background-color: white;
+	border-color:gray;
+	border-radius: 10px;
+	border-style: solid;
+	padding: 10px;
+	font-family: cursive;
+}
+.right {
+    right: 0px;
+    width: 300px;
+    padding: 10px;
+}
+.left {
+   	left: 0px;
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+}
+
+.card {
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 59%;
+}
+
+.col-md{
+	float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+/*
+ Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: cursive;
+
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: right;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-right: 30px; 
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.literally {
+  width: 100%;
+}
+.transparent{
+  opacity: 0.1;
+}

@@ -8,12 +8,11 @@
       <div class="dropdown-content" style="right: 0; left: auto;">
         <a href="editaccount.php">Account Settings</a>
         <a href="about.php">About</a>
-        <a href="">Privacy Policy</a>
         <a href="login.php">Logout</a>
       </div>
     </div>
-    <a href="#" title="Message" class="dropbtn"><span class=" fa fa-envelope"></span></a>
-    <a href="#" title="Notification"><span class="fa fa-bell"></span></a>
+    <a title="Message" id="msgbtn" class="cursor"><span class=" fa fa-envelope"></span></a>
+    <a id="notifbtn" title="Notification" class="cursor"><span class="fa fa-bell"></span></a>
     <a href="home.php" title="Home"><span class="fa fa-home"></span></a>
     <a href="profile.php"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 25px; width: 25px;"></a>
   </div>

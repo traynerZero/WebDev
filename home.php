@@ -12,7 +12,12 @@
 
   <?php include "header.php"; ?>
 
-            <button type="button" style="width: 100%; padding: 10px; " class="letspaint"><strong>LET'S PAINT</strong></button>
+  <div id="notif"  style="display: none;"><?php include "notif.php"; ?></div>
+  <div id="gobckbtn" style="display: none; margin: 20px;"><button class="theme-noborder" id="gobck">Go back</button></div>
+  <div id="msg"  style="display: none;"><?php include "message.php"; ?></div>
+<div id="news">
+    <br>
+            <button type="button" style="width: 85%; padding: 10px; margin-left: 100px; margin-right: 100px; " class="letspaint"><strong>LET'S PAINT</strong></button>
 <div class="panel">
 <div class="row">
 	<div class="column left" style="height: auto; width: 37%;" align="right">
@@ -25,7 +30,7 @@
                                     <br>
                                     <textarea class="theme" id="desc" style="width: 400px;"></textarea>
                                     <br>
-                                    <button type="button" id="upload" style="padding: 10px;">UPLOAD <span class="fa fa-camera"></span></button>
+                                    <button id="upload" style="padding: 10px;" class="cursor">UPLOAD <span class="fa fa-camera"></span></button>
                                     <button type="button" id="saveDesign" style="padding: 10px;">POST  <span class="fa fa-check"></span></button>
 
             </div>
@@ -33,15 +38,15 @@
     <a href="#"><h3 style="color: gray" align="left">FIND FRIENDS <span class="fa fa-address-book-o"></span></h3></a>
 
     <div class="col-md relative wrapper" align="left">
-        <a href="#"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><p class="font-md">Sample Person</p></a>
+        <a href="profile.php"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><p class="font-md">Sample Person</p></a>
         <button type="button" class="theme-noborder">Add Friend +</button>
     </div>
     <div class="col-md relative wrapper" align="left">
-        <a href="#"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><p class="font-md">Sample Person</p></a>
+        <a href="profile.php"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><p class="font-md">Sample Person</p></a>
         <button type="button" class="theme-noborder">Add Friend +</button>
     </div>
     <div class="col-md relative wrapper" align="left">
-        <a href="#"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><p class="font-md">Sample Person</p></a>
+        <a href="profile.php"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><p class="font-md">Sample Person</p></a>
         <button type="button" class="theme-noborder">Add Friend +</button>
     </div>
 
@@ -70,31 +75,31 @@
         </div>
     </div>
 
-    <br>
-    <footer class="theme-noborder"></footer>
-    <footer class="theme-noborder"><h6 style="color: gray"><a href="index.php">Paintstagram</a> © 2018</h6></footer>
+    <br><footer><h4 style="color: gray;" class="font"><a href="index.php">Paintstagram</a> © 2018</h4></footer>
 
 	</div>
 
-    <div class="theme-noborder column left" id="displayhere">
+    <div class="column left" id="displayhere">
         <!-- news feed content  !-->
         <section>
-        <div class="card relative wrapper">
-        <a href=""><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><span class="black">Sample Person</span></a>
-        <p class="font-md" style="padding: 10px;">SAMPLEAFKDSHFKJSAHKFHSD DSJKFHKSDAFHK LSAHFKJASH FKDSAHFKJHSADKJFHASDJFHASDJKFHSADKHF HFJKAH FJKDSHFKJADSH KFHSADJHDHSKFJAfkahf kjahfkjsdahfsdahfksja</p>
+        <div class="theme-noborder card relative wrapper">
+        <a href="profile.php"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><span class="black">Hillary Clinton</span></a>
+        <p class="font-md" style="padding: 10px;">Check out my post!</p>
         <img  id="myImg" class="img" name="cust_image" src="/moreimg/no_image.jpg">
         <p class="topcorner font-sm">01/06/2018 11:16 PM</p>
-        <span class="topcorner button fa fa-ellipsis-h"></span>
+        <span class="topcorner button fa fa-close"></span>
+        <button class="theme-noborder">Comments</button>
         </div>
         <br>
         </section>
         <section>
-        <div class="card relative wrapper">
-        <a href=""><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><span class="black">Sample Person</span></a>
-        <p class="font-md" style="padding: 10px;">SAMPLEAFKDSHFKJSAHKFHSD DSJKFHKSDAFHK LSAHFKJASH FKDSAHFKJHSADKJFHASDJFHASDJKFHSADKHF HFJKAH FJKDSHFKJADSH KFHSADJHDHSKFJAfkahf kjahfkjsdahfsdahfksja</p>
+        <div class="theme-noborder card relative wrapper">
+        <a href="profile.php"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><span class="black">Donald Tramp</span></a>
+        <p class="font-md" style="padding: 10px;">Check This out tooo!</p>
         <img  id="myImg" class="img" name="cust_image" src="/moreimg/no_image.jpg">
         <p class="topcorner font-sm">01/06/2018 11:16 PM</p>
-        <span class="topcorner button fa fa-ellipsis-h"></span>
+        <span class="topcorner button fa fa-close"></span>
+        <button class="theme-noborder">Comments</button>
         </div>
         <br>
         </section>
@@ -106,18 +111,5 @@
     </div>
     </div>
 </div>
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- The Close Button -->
-  <span class="close">&times;</span>
-
-  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01">
-
-  <!-- Modal Caption (Image Text) -->
-  <div id="caption"></div>
 </div>
-
-
 </body>
