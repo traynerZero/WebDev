@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Paintstagram</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<!-- stylesheet -->
 
+<?php
+  
+  include('links.php');
 
-    <!--scripts-->
-    <link rel="stylesheet" type="text/css" href="css/modals.css">
-    <link rel="stylesheet" type="text/css" href="css/editaccount.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery-ui.js"></script>
-</head>
+?>
+
 <body>
  <?php
     include('header.php');
  ?>
+ 
+    <link rel="stylesheet" type="text/css" href="css/editaccount.css">
   <form action="index.html" method="post">
       
         <h1>Edit account</h1>

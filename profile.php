@@ -2,30 +2,25 @@
 <html>
 
 <head>
-    <title>Paintstagram</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <!-- stylesheet -->
-    <!-- dependency: React.js -->
-    <script src="js/react-with-addons.js"></script>
-    <script src="js/react-dom.js"></script>
 
-    <!--scripts-->
-    <link href="css/literallycanvas.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/modals.css">
-    <link rel="stylesheet" type="text/css" href="css/profile.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/literallycanvas.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/profile.js"></script>
-    <script src="js/scripts.js"></script>
+<?php include "links.php"; ?>
+
+<link rel="stylesheet" type="text/css" href="css/profile.css">
+    <script src="js/profile.js"></script>    
 </head>
 
 <body>
     <?php
     include('header.php');
+
+
+    $pid = $_GET['id'];
+
+
+
+    $sql = "SELECT * FROM tbluser where id = '$pid'";
+    $result = mysqli_query($con,$sql);
+    $data = mysqli_fetch_assoc($result);
  ?>
  <br>
  <div id="notif"  style="display: none;"><?php include "notif.php"; ?></div>
@@ -42,12 +37,20 @@
                     </div>
                 </div>
                 <div id="user_info">
-                    <h2 class="user_name">Robbie Green</h2>
+                    <h2 class="user_name"><?php echo $data['username']; ?></h2>
                     <hr>
                     <ul id="user_list">
-                        <li>
-                            <i class="icon-building info_icon"></i>
+                        <?php
+
+
+    if($pid == $userid){
+        echo ' <li><span class="info_icon">
+                                <i class="icon-briefcase"></i>
                             </span><a href="#" style="color: white;">Edit Picture</a></li>
+                        <li>';   
+    }
+
+                        ?>
                         <li>
                             <span class="info_icon">
                                 <i class="icon-briefcase"></i>
@@ -62,7 +65,15 @@
         </div>
         <br>
         <br>
-        <button type="button" style="width: 85%; padding: 10px; margin-left: 100px; margin-right: 100px; " class="letspaint"><strong>LET'S PAINT</strong></button>
+        <?php
+
+
+    if($pid == $userid){
+        echo " 
+        <button type='button' style='width: 85%; padding: 10px; margin-left: 100px; margin-right: 100px;' class='letspaint'><strong>LET'S PAINT</strong></button>";   
+    }
+
+                        ?>
 <div class="panel">
 <div class="row">
     <div class="column left" style="height: auto; width: 37%;" align="right">
@@ -79,7 +90,7 @@
                                     <button type="button" id="saveDesign" style="padding: 10px;">POST  <span class="fa fa-check"></span></button>
 
             </div>
-    <div class="row card theme-noborder" >
+    <div class="row card theme-noborder" style=" border:1px solid; border-color: #9bf281;">
     <a href="#"><h3 style="color: gray" align="left">FRIENDS <span class="fa fa-address-book-o"></span></h3></a>
 
     <div class="col-md relative wrapper" align="left">
@@ -95,7 +106,7 @@
 
     </div>
 
-    <div class="row card theme-noborder">
+    <div class="row card theme-noborder" style=" border:1px solid; border-color: #9bf281;">
         <a href="#"><h3 style="color: gray" align="left">My Works<span class="fa fa-photo"></span></h3></a>
         <div class="col-md wrapper">
         <img  id="myImg" class="img-tr" name="cust_image" src="/moreimg/no_image.jpg">
@@ -125,26 +136,37 @@
 
     <div class="column left" id="displayhere">
         <!-- news feed content  !-->
-        <section>
-        <div class="theme-noborder card relative wrapper">
-        <a href="profile.php"><img src="/moreimg/profilepic.jpeg" class="profile-img" style="height: 50px; width: 50px;"><span class="black">Robbie Green</span></a>
-        <p class="font-md" style="padding: 10px;">This Picture is soooo amaziiiing!</p>
-        <img  id="myImg" class="img" name="cust_image" src="/moreimg/wallpaper.jpg">
-        <p class="topcorner font-sm">01/06/2018 11:16 PM</p>
-        <span class="topcorner button fa fa-ellipsis-h"></span>
+        <?php
+
+        $sql = "SELECT * FROM tblpost where user_id = '$pid' order by date_created desc limit 0,4";
+        $result = mysqli_query($con,$sql);
+
+        while($data = mysqli_fetch_assoc($result)){
+            $id = $data['user_id'];
+            $sql1 = "SELECT username FROM tbluser where id = '$id' ";
+            $result1 = mysqli_query($con,$sql1);
+            $data1 = mysqli_fetch_assoc($result1);
+            ?>
+            <div class="theme-noborder relative wrapper" style="border:1px solid; border-color: #9bf281;">
+        <div style="padding: 5px;">
+        <a href="profile.php"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 50px; width: 50px;"><span class="black"><?php echo $data1['username']; ?></span></a>
+        <p class="font-md" style="padding: 10px;"><?php echo $data['post_desc']; ?></p>
+        </div>
+        <img  id="myImg" class="img" name="cust_image" src="<?php echo $data['postimage']; ?>">
+        <div style="padding: 5px;">
+        <p class="topcorner font-sm"><?php echo $data['date_created']; ?></p>
+        <span class="topcorner button fa fa-close"></span>
+        <button class="theme-noborder">Comments</button>
+        </div>
         </div>
         <br>
-        </section>
-        <section>
-        <div class="theme-noborder card relative wrapper">
-        <a href="profile.php"><img src="/moreimg/profilepic.jpeg" class="profile-img" style="height: 50px; width: 50px;"><span class="black">Robbie Green</span></a>
-        <p class="font-md" style="padding: 10px;">SAMPLEAFKDSHFKJSAHKFHSD DSJKFHKSDAFHK LSAHFKJASH FKDSAHFKJHSADKJFHASDJFHASDJKFHSADKHF HFJKAH FJKDSHFKJADSH KFHSADJHDHSKFJAfkahf kjahfkjsdahfsdahfksja</p>
-        <img  id="myImg" class="img" name="cust_image" src="/moreimg/no_image.jpg">
-        <p class="topcorner font-sm">01/06/2018 11:16 PM</p>
-        <span class="topcorner button fa fa-ellipsis-h"></span>
-        </div>
-        <br>
-        </section>
+
+            <?php
+
+        }
+
+        ?>
+        <button class="theme-noborder" style="margin-left: 45%;">Load More</button>
         <!-- end of news feed content  !-->
 
         

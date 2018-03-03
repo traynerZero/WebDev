@@ -5,20 +5,11 @@
 	
 </head>
 
-  <div class="navbar">
-    <div class="dropdown">
-    <button class="dropbtn" style="margin-right: 40px;">
-      <span class="fa fa-bars"></span>
-    </button>
-    <div class="dropdown-content" style="right: 0; left: auto;">
-      <a href="editaccount.php">Account Settings</a>
-      <a href="about.php">About</a>
-      <a href="index.php">Logout</a>
-    </div>
-  </div>
-  <a href="home.php" title="Home"><span class="fa fa-home"></span></a>
-  <a href="profile.php"><img src="/moreimg/img_avatar.png" class="profile-img" style="height: 25px; width: 25px;"></a>
-</div>
+  <?php
+
+  include("header.php");
+
+  ?>
 
 <body>
 
