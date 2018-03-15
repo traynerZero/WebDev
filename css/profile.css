@@ -11,6 +11,12 @@ hr {
     padding: 3px;
 }
 
+.profilepicture{
+    height: 100px;
+    width: 100px;
+    border-radius: 3px;
+}
+
 
 #user_header {
     max-width: 100%;
