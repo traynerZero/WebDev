@@ -17,6 +17,9 @@ if($cnt != 0){
 	session_start();
 	$data = mysqli_fetch_assoc($result);
 	$_SESSION['userid'] = $data['id'];
+	$_SESSION['userPass'] = $data['password'];
+	$_SESSION['username']= $data['username'];
+	$_SESSION['email']= $data['email'];
 	echo "<script>alert('Welcome ".$data['username']."'); location.href = '../home.php';</script>";
 }else{
 	echo "<script>alert('Email/Password Incorrect'); location.href = '../login.php';</script>";
